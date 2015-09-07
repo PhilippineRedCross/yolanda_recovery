@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator"
+    content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Haiyan Operation: Recovery</title>
-
     <meta property="og:type" content="Article" />
     <meta property="og:title" content="Red Cross: Haiyan Recovery" />
-    <meta property="og:description" content="Typhoon Haiyan recovery operation accomplishments by sector."/>
+    <meta property="og:description" content="Typhoon Haiyan recovery operation accomplishments by sector." />
     <meta property="og:url" content="http://philippineredcross.github.io/yolanda_recovery/" />
     <meta property="og:image" content="___________" />
     <meta property="og:site_name" content="Red Cross: Haiyan Recovery" />
-    
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/main.css" rel="stylesheet" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -23,100 +22,98 @@
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]--> 
-
+    <![endif]-->
     <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (function(i,s,o,g,r,a,m){i[&#39;GoogleAnalyticsObject&#39;]=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      })(window,document,&#39;script&#39;,&#39;//www.google-analytics.com/analytics.js&#39;,&#39;ga&#39;);
 
-      ga('create', 'UA-56269073-1', 'auto');
-      ga('require', 'displayfeatures');
-      ga('send', 'pageview');
-    </script>  
-
+      ga(&#39;create&#39;, &#39;UA-56269073-1&#39;, &#39;auto&#39;);
+      ga(&#39;require&#39;, &#39;displayfeatures&#39;);
+      ga(&#39;send&#39;, &#39;pageview&#39;);
+    
+</script>
   </head>
-
   <body>
-
-    <!-- Modal -->
-    <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-footer">
-            <div style="text-align:left;">
-              <h4>Recovery operations after Typhoon Haiyan (Yolanda)</h4>
-              <p>Use the buttons to choose a sector and filter by cooperating partner. Click a province on the map to view the accomplishements by municipality for that province. Click a municipality on the map to view the accomplishements by barangay for that municipality.</p>
-            </div>  
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>            
+  <!-- Modal -->
+  <div class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-footer">
+          <div style="text-align:left;">
+            <h4>Recovery operations after Typhoon Haiyan (Yolanda)</h4>
+            <p>Use the buttons to choose a sector and filter by cooperating partner. Click a province on the map to view the
+            accomplishements by municipality for that province. Click a municipality on the map to view the accomplishements by
+            barangay for that municipality.</p>
           </div>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
-    
-    <div id="tooltip"></div>
-    <div id="loading"><img id="loader" src="img/ajax_loader_gray_512.gif" /></div>
-    <a href="http://www.redcross.org.ph/" target="_blank"><img class="prc-logo" src="img/PRC-logo_whiteBorder_small.png"></a>
-    <button class="btn btn-sm btn-zoom btn-custom1" type="button" onClick="zoomOut();">
-      <span class="glyphicon glyphicon-zoom-out"></span> Zoom Out
-    </button>
-
-    <button class="btn btn-sm btn-instructions btn-custom1" type="button" onClick="$('#infoModal').modal();">
-      <span class="glyphicon glyphicon-info-sign"></span>
-    </button>
-         
-    <div class="container-fluid">
-
-      <div class="row">
-          <div id="map"></div>
+  </div>
+  <div id="tooltip"></div>
+  <div id="loading">
+    <img id="loader" src="img/ajax_loader_gray_512.gif" />
+  </div>
+  <a href="http://www.redcross.org.ph/" target="_blank">
+    <img class="prc-logo" src="img/PRC-logo_whiteBorder_small.png" />
+  </a> 
+  <button class="btn btn-sm btn-zoom btn-custom1" type="button" onclick="zoomOut();"> Zoom Out</button>
+  <div class="container-fluid">
+    <div class="row">
+      <div id="map"></div>
+    </div>
+    <div class="row" style="padding:0 10px;">
+      <h4>Recovery operations after Typhoon Haiyan (Yolanda)</h4>
+      <div id="sector-options" style="margin-left:10px;">
+      <button id="livelihood" class="btn btn-default btn-sm btn-sector" type="button"
+      onclick="loadSector(&#39;livelihood&#39;, this)">
+      <img class="sector-btn-img" src="img/livelihood.png" /> Livelihood</button> 
+      <button id="shelter" class="btn btn-default btn-sm btn-sector" type="button" onclick="loadSector(&#39;shelter&#39;, this)">
+      <img class="sector-btn-img" src="img/shelter.png" /> Shelter</button> 
+      <button id="education" class="btn btn-default btn-sm btn-sector" type="button"
+      onclick="loadSector(&#39;education&#39;, this)">
+      <img class="sector-btn-img" src="img/education.png" /> Education</button> 
+      <button id="watsan" class="btn btn-default btn-sm btn-sector" type="button" onclick="loadSector(&#39;watsan&#39;, this)">
+      <img class="sector-btn-img" src="img/watsan.png" /> Water &amp; Sanitation</button> 
+      <button id="health" class="btn btn-default btn-sm btn-sector" type="button" onclick="loadSector(&#39;health&#39;, this)">
+      <img class="sector-btn-img" src="img/health.png" /> Health</button> 
+      <button id="drr" class="btn btn-default btn-sm btn-sector" type="button" onclick="loadSector(&#39;drr&#39;, this)">
+      <img class="sector-btn-img" src="img/drr.png" /> DRR</button></div>
+      <h6>
+      <b>Cooperating partners in zoomed area of interest:</b> 
+      <span id="partnerButtons" style="padding-left:10px;"></span></h6>
+      <div id="sector-accomplished">
+        <table class="table table-striped table-condensed">
+          <colgroup></colgroup>
+          <thead>
+            <tr id="sector-accomplished_headers">
+              <td></td>
+            </tr>
+          </thead>
+          <tbody id="sector-accomplished_content"></tbody>
+        </table>
       </div>
-
-      <div class="row" style="padding:0 10px;">      
-        <h4>Recovery operations after Typhoon Haiyan (Yolanda) </h4>   
-
-        <div id="sector-options" style="margin-left:10px;">
-          <button id="livelihood" class="btn btn-default btn-sm btn-sector" type="button" onClick="loadSector('livelihood', this)"><img class="sector-btn-img" src="img/livelihood.png"> Livelihood</button> 
-          <button id="shelter" class="btn btn-default btn-sm btn-sector" type="button" onClick="loadSector('shelter', this)"><img class="sector-btn-img" src="img/shelter.png"> Shelter</button> 
-          <button id="education" class="btn btn-default btn-sm btn-sector" type="button" onClick="loadSector('education', this)"><img class="sector-btn-img" src="img/education.png"> Education</button>
-          <button id="watsan" class="btn btn-default btn-sm btn-sector" type="button" onClick="loadSector('watsan', this)"><img class="sector-btn-img" src="img/watsan.png"> Water & Sanitation</button>
-          <button id="health" class="btn btn-default btn-sm btn-sector" type="button" onClick="loadSector('health', this)"><img class="sector-btn-img" src="img/health.png"> Health</button>
-          <button id="drr" class="btn btn-default btn-sm btn-sector" type="button" onClick="loadSector('drr', this)"><img class="sector-btn-img" src="img/drr.png"> DRR</button>
-        </div>
-
-        <p><h6>
-          <b>Cooperating partners in zoomed area of interest:</b>
-          <span  id="partnerButtons" style="padding-left:10px;"></span>
-        </h6></p>
-
-        <div id="sector-accomplished">
-          <table class="table table-striped table-condensed">
-            <colgroup></colgroup>
-            <thead>
-              <tr id="sector-accomplished_headers"></tr>
-            </thead>
-            <tbody id="sector-accomplished_content"></tbody>
-          </table>
-        </div>
-
-        <hr>
-
-        <p>Please submit questions and feedback by <a href="mailto:daniel.joseph@ifrc.org" target="_blank" title="daniel.joseph@ifrc.org">email</a>.</p> 
-        <p>
-          <span style="font-weight:bold;"> Last updated: August 8, 2015.</span>
-          <span class="disclaimer"><a title="Disclaimer" onClick="showDisclaimer();">Disclaimer</a></span>
-        </p>
-        <a href="http://ifrc.org/" target="_blank"><img id="ifrc-logo" src="img/IFRC_cobranding.png"></a>
-
-      </div> <!-- /.row -->
-    </div> <!-- /.container-fluid -->
-
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/d3.min.js"></script>
-    <script src="js/topojson.v1.min.js"></script>
-    <script src="js/fitProjection.js"></script>
-    <script src="js/main.js"></script>
-
-  </body>
+      <hr />
+      <p>Please submit questions and feedback by 
+      <a href="mailto:charles.ranby@ifrc.org" target="_blank" title="charles.ranby@ifrc.org">email</a>.</p>
+      <p>
+      <span style="font-weight:bold;">Last updated: August 8, 2015.</span> 
+      <span class="disclaimer">
+        <a title="Disclaimer" onclick="showDisclaimer();">Disclaimer</a>
+      </span></p>
+      <a href="http://ifrc.org/" target="_blank">
+        <img id="ifrc-logo" src="img/IFRC_cobranding.png" />
+      </a>
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container-fluid -->
+  <script src="js/jquery.min.js"></script> 
+  <script src="js/bootstrap.min.js"></script> 
+  <script src="js/d3.min.js"></script> 
+  <script src="js/topojson.v1.min.js"></script> 
+  <script src="js/fitProjection.js"></script> 
+  <script src="js/main.js"></script></body>
 </html>
