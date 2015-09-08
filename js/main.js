@@ -33,8 +33,8 @@ var svg = d3.select("#map").append("svg")
     .attr("height", height);
 
 var provinceGroup = svg.append('g').attr("id", "province-mapped");
-var municipGroup = svg.append('g').attr("id", "municip-mapped");
-var brgyGroup = svg.append('g').attr("id", "brgy-mapped");
+var municipGroup = svg.append('g').attr("id", "Municipality-mapped");
+var brgyGroup = svg.append('g').attr("id", "Barangay-mapped");
 
 svg
     // .call(zoom) // delete this line to disable free zooming
@@ -55,7 +55,7 @@ function d3Start(){
       .on("mouseout", function(){ 
          $('#tooltip').empty();        
       });
-    $("#loading").fadeOut(300);
+    $("#loading").fadeOut(600);
     $("#livelihood").click();
   }); 
 }
@@ -100,7 +100,7 @@ function loadSector(sector, target){
       $("#loading").show();
       d3.csv("data/recovery_livelihood.csv", function(data) { 
         livelihoodData = data;
-        $("#loading").fadeOut(300);
+        $("#loading").fadeOut(600);
         parsePartners(); 
       });
     } else {
@@ -110,22 +110,23 @@ function loadSector(sector, target){
   if(sector === "shelter"){
     indicatorList = [
       "Shelter Repair Beneficiaries Selected",
-      "First Distribution (6,000 PHP)",
-      "Second Distribution (4,000 PHP)",
+      "First Distribution",
+      "Second Distribution",
       "CGI",
       "Shelter Repair Closeout / Completed",
       "Core Shelter Beneficiaries Selected",
       "Relocation Beneficiaries Selected",
-      "Ongoing Construction",
-      "Wooden Core Shelter Completed",
-      "Half-Concrete Core Shelter Completed",
+      "Construction Started (Core + Relocation)",
+      "Wooden Shelter (Core Shelter)",
+      "Half Concrete (Core Shelter)",
+	  //"Relocation Completed",
       "Training- Skilled Labour"
     ]; 
     if(shelterData.length === 0){
       $("#loading").show();
       d3.csv("data/recovery_shelter.csv", function(data) { 
         shelterData = calculateShelterOngoing(data);
-        $("#loading").fadeOut(300);
+        $("#loading").fadeOut(600);
         parsePartners(); 
       });
     } else {
@@ -152,7 +153,7 @@ function loadSector(sector, target){
       $("#loading").show();
       d3.csv("data/recovery_health.csv", function(data) { 
         healthData = data;
-        $("#loading").fadeOut(300);
+        $("#loading").fadeOut(600);
         parsePartners(); 
       });
     } else {
@@ -164,13 +165,13 @@ function loadSector(sector, target){
       "Classrooms Selected at School",
       "Students covered by rehab / constructed classrooms",
       "Classrooms Completed and Equipped",
-      "5.2 Distribution of School Kits"
+      "Distribution of School Kits"
     ]; 
     if(educationData.length === 0){
       $("#loading").show();
       d3.csv("data/recovery_education.csv", function(data) { 
         educationData = data;
-        $("#loading").fadeOut(300);
+        $("#loading").fadeOut(600);
         parsePartners(); 
       });
     } else {
@@ -179,20 +180,20 @@ function loadSector(sector, target){
   }
   if(sector === "watsan"){
     indicatorList = [
-      "Shelter Latrine Construction Ongoing",
-      "Core Latrines Completed",
+      "Household Latrines Construction Started",
+      "Construction of Household Latrines Completed",
       "Relocation Latrines Completed",
-      "# of PHAST volunteers trained",
-      "Schools Selected for Latrines",
-      "Schools w/ Latrine Construction Ongoing",
-      "Schools w/ Latrine Construction Completed",
-      "# Students & Teachers trained in CHAST"
+      "# of RC 143 Volunteers Trained on HP (PHAST & Simplified HP)",
+      "Schools Identified",
+      "Schools WatSan Facilities Construction Started",
+      "Schools WatSan Facilities Completed",
+      "# of students reached on CHAST"
     ]; 
     if(watsanData.length === 0){
       $("#loading").show();
       d3.csv("data/recovery_watsan.csv", function(data) { 
         watsanData = calculateLatrineOngoing(data);
-        $("#loading").fadeOut(300);
+        $("#loading").fadeOut(600);
         parsePartners(); 
       });
     } else {
@@ -201,14 +202,14 @@ function loadSector(sector, target){
   }
   if(sector === "drr"){
     indicatorList = [
-      "Communities Organized (RC 143)",
-      "Individuals Organized (RC 143)"
+      "community organized (RC 143)",
+      "individuals organized (RC 143)"
     ]; 
     if(drrData.length === 0){
       $("#loading").show();
       d3.csv("data/recovery_drr.csv", function(data) { 
         drrData = data;
-        $("#loading").fadeOut(300);
+        $("#loading").fadeOut(600);
         parsePartners(); 
       });
     } else {
@@ -264,9 +265,9 @@ function changePartnerFilter(){
   selectedPartner = $("#partnerButtons").find(".filtering").attr("id");
   $(currentSectorData()).each(function(index, record){
     if(selectedPartner === record.Partner  || selectedPartner === "ALL-PARTNERS" ){
-      provinceList[record.Admin2] = record.prov;
-      municipList[record.Admin3] = record.municip;
-      brgyList[record.Admin4] = record.brgy; 
+      provinceList[record.Admin2] = record.Province;
+      municipList[record.Admin3] = record.Municipality;
+      brgyList[record.Admin4] = record.Barangay; 
     }    
   });
   colorMap();
@@ -342,7 +343,7 @@ function drawMunicipalities(d){
          $('#tooltip').empty();        
       });
   municipDisplay.exit().remove();
-  $("#loading").fadeOut(400);
+  $("#loading").fadeOut(600);
   colorMap();
   createTable();
 }
@@ -370,7 +371,7 @@ function drawBarangays(d){
          $('#tooltip').empty();        
       });
   brgyDisplay.exit().remove();
-  $("#loading").fadeOut(400);
+  $("#loading").fadeOut(600);
   colorMap();
   createTable();
 }
@@ -405,7 +406,7 @@ function createTable(){
       // operation overview
       if("ALL" === activePcode){
           if(breakdownRows.hasOwnProperty(record.Admin2) === false){
-            breakdownRows[record.Admin2] = { 'name' : record.prov };
+            breakdownRows[record.Admin2] = { 'name' : record.Province };
             $.each(indicatorList, function(index, indicator){
               breakdownRows[record.Admin2][indicator] = 0;
             });
@@ -420,7 +421,7 @@ function createTable(){
       // province active
       if(record.Admin2 === activePcode){
         if(breakdownRows.hasOwnProperty(record.Admin3) === false){
-          breakdownRows[record.Admin3] = { 'name' : record.municip };
+          breakdownRows[record.Admin3] = { 'name' : record.Municipality };
           $.each(indicatorList, function(index, indicator){
             breakdownRows[record.Admin3][indicator] = 0;
           });
@@ -435,7 +436,7 @@ function createTable(){
       // muncip active
       if(record.Admin3 === activePcode){
         if(breakdownRows.hasOwnProperty(record.Admin4) === false){
-          breakdownRows[record.Admin4] = { 'name' : record.brgy };
+          breakdownRows[record.Admin4] = { 'name' : record.Barangay };
           $.each(indicatorList, function(index, indicator){
             breakdownRows[record.Admin4][indicator] = 0;
           });
@@ -489,19 +490,19 @@ function colorMap(){
   for(entry in provinceList){
     provinceGroup.selectAll("path")
         .filter(function(d) {return d.properties.PCODE_PH1 == entry})
-        .attr('fill',"#ed1b2e");
+        .attr('fill',"#C92E27");
   }
   municipGroup.selectAll("path").attr("fill", null);
   for(entry in municipList){
     municipGroup.selectAll("path")
         .filter(function(d) {return d.properties.PCODE_PH2 == entry})
-        .attr('fill',"#f03f4f");
+        .attr('fill',"#9A7F6A");
   }  
   brgyGroup.selectAll("path").attr("fill", null);
   for(entry in brgyList){
     brgyGroup.selectAll("path")
         .filter(function(d) {return d.properties.PCODE_PH3 == entry})
-        .attr('fill',"#f36471");
+        .attr('fill',"#ECE3B2");
   }  
 }
 
