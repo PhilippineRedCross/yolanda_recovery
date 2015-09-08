@@ -202,8 +202,8 @@ function loadSector(sector, target){
   }
   if(sector === "drr"){
     indicatorList = [
-      "community organized (RC 143)",
-      "individuals organized (RC 143)"
+      "Community organized (RC 143)",
+      "Individuals organized (RC 143)"
     ]; 
     if(drrData.length === 0){
       $("#loading").show();
