@@ -1,7 +1,7 @@
 Admin2,Admin3,Admin4,Province,Partner,Municipality,Barangay,Classrooms Selected at School,Students covered by rehab / constructed classrooms,Classrooms Construction Started,Classrooms Completed and Equipped,Distribution of School Kits,Distribution of Lego Toys
 PH060400000,PH060402000,PH060402004,Aklan,Spanish Red Cross,Balete,Calizo,1,50,1,1,,
 PH060400000,PH060402000,PH060402005,Aklan,Spanish Red Cross,Balete,Cortes,1,25,1,1,,
-PH060400000,PH060402000,PH060402010,Aklan,Spanish Red Cross,Balete,Oquendo,1,31,1,1,,
+PH060400000,PH060402000,PH060402010,Aklan,Spanish Red Cross,Balete,Oquendo,1,31,1,1,,24
 PH060400000,PH060409000,PH060409001,Aklan,Singapore Red Cross,Libacao,Agmailig,2,60,2,2,,
 PH060400000,PH060409000,PH060409002,Aklan,Singapore Red Cross,Libacao,Alfonso XII,0,0,0,0,,
 PH060400000,PH060409000,PH060409010,Aklan,Singapore Red Cross,Libacao,Guadalupe,4,150,4,4,,
@@ -9,19 +9,20 @@ PH060400000,PH060409000,PH060409011,Aklan,Singapore Red Cross,Libacao,Janlud,1,3
 PH060400000,PH060409000,PH060409013,Aklan,Singapore Red Cross,Libacao,Luctoga,3,188,0,0,,
 PH060400000,PH060409000,PH060409014,Aklan,Singapore Red Cross,Libacao,Magugba,0,0,,,,
 PH060400000,PH060409000,PH060409016,Aklan,Singapore Red Cross,Libacao,Ogsip,1,14,1,1,,
-PH060400000,PH060409000,PH060409022,Aklan,Singapore Red Cross,Libacao,Rivera,0,,0,0,,
+PH060400000,PH060409000,PH060409017,Aklan,Singapore Red Cross,Libacao,Ortega,,,,,,25
+PH060400000,PH060409000,PH060409022,Aklan,Singapore Red Cross,Libacao,Rivera,0,,0,0,,25
 PH060400000,PH060410000,PH060410006,Aklan,Spanish Red Cross,Madalag,Cabilawan,1,16,1,1,,
-PH060400000,PH060410000,PH060410013,Aklan,Spanish Red Cross,Madalag,Maria Cristina,1,27,1,1,,
+PH060400000,PH060410000,PH060410013,Aklan,Spanish Red Cross,Madalag,Maria Cristina,1,27,1,1,,25
 PH060400000,PH060410000,PH060410014,Aklan,Spanish Red Cross,Madalag,Medina,1,31,1,1,,
 PH060400000,PH060410000,PH060410018,Aklan,Spanish Red Cross,Madalag,Paningayan,2,35,2,2,,
-PH060400000,PH060410000,PH060410019,Aklan,Spanish Red Cross,Madalag,Panipiason,1,38,1,0,,
+PH060400000,PH060410000,PH060410019,Aklan,Spanish Red Cross,Madalag,Panipiason,1,38,1,0,,23
 PH060400000,PH060410000,PH060410021,Aklan,Spanish Red Cross,Madalag,San Jose,1,21,1,1,,
-PH061900000,PH061905000,PH061905011,Capiz,Hong Kong Red Cross (Branch of the Red Cross Society of China),Ivisan,Mianay,3,120,3,,,
-PH061900000,PH061905000,PH061905013,Capiz,Singapore Red Cross,Ivisan,Poblacion Norte,10,450,10,,,
+PH061900000,PH061905000,PH061905011,Capiz,Hong Kong Red Cross,Ivisan,Mianay,3,120,3,,,
+PH061900000,PH061905000,PH061905013,Capiz,Singapore Red Cross,Ivisan,Poblacion Norte,10,450,10,10,,
 PH061900000,PH061905000,PH061905015,Capiz,Singapore Red Cross,Ivisan,Santa Cruz,3,60,3,3,,
 PH061900000,PH061909000,PH061909005,Capiz,Singapore Red Cross,Panay,Bagacay,1,25,1,1,,
 PH061900000,PH061910000,PH061910005,Capiz,Singapore Red Cross,Panitan,Bahit,2,60,2,2,,
-PH061900000,PH061910000,PH061910012,Capiz,Singapore Red Cross,Panitan,Capagao,2,60,2,,,
+PH061900000,PH061910000,PH061910012,Capiz,Singapore Red Cross,Panitan,Capagao,2,60,2,2,,
 PH061900000,PH061914000,PH061914030,Capiz,PRC,Roxas City (Capital),Inzo Arnaldo Village (Cadimahan),,,,,535,
 PH061900000,PH061914000,PH061914035,Capiz,PRC,Roxas City (Capital),Libas,,,,,500,
 PH061900000,PH061914000,PH061914045,Capiz,Singapore Red Cross,Roxas City (Capital),Sibaguan,4,160,4,,,
@@ -85,9 +86,15 @@ PH083700000,PH083749000,PH083749010,Leyte,Spanish Red Cross,Tolosa,San Roque,6,6
 PH083700000,PH083749000,PH083749011,Leyte,Spanish Red Cross,Tolosa,San Vicente,11,208,11,11,208,133
 PH083700000,PH083749000,PH083749012,Leyte,Chinese Red Cross,Tolosa,Tanghas,6,1500,6,6,,
 PH083700000,PH083749000,PH083749012,Leyte,Spanish Red Cross,Tolosa,Tanghas,6,121,6,6,145,133
+PH083700000,PH083749000,PH083749013,Leyte,Spanish Red Cross,Tolosa,Telegrafo,,,,,402,
 PH083700000,PH083749000,#N/A,Leyte,Spanish Red Cross,Tolosa,Burak Elem School,0,,,,115,0
 PH083700000,PH083749000,#N/A,Leyte,Spanish Red Cross,Tolosa,DZR Elem. School,0,,,,689,133
 PH083700000,#N/A,#N/A,Leyte,Japanese Red Cross,Alang - Alang ,San Roque,19,0,,,,
 PH175300000,PH175307000,PH175307015,Palawan,Swiss Red Cross,Busuanga,Santo Niño,,,,,214,
 PH175300000,PH175309000,PH175309009,Palawan,Swiss Red Cross,Coron,Decalachao,,,,,335,
 PH175300000,PH175322000,PH175322010,Palawan,Swiss Red Cross,Culion,Osmeña,,,,,139,
+#N/A,#N/A,#N/A,Leyte,Japanese Red Cross,Tacloban City (Capital),Manlurip,,,4,,,
+#N/A,#N/A,#N/A,Leyte,Japanese Red Cross,Tacloban City (Capital),Sagkahan,,,11,,,
+#N/A,#N/A,#N/A,Leyte,Japanese Red Cross,Tacloban City (Capital),Sagkahan 62 B,,,10,,,
+#N/A,#N/A,#N/A,Leyte,Japanese Red Cross,Tanauan,Canramos,,,27,,,
+#N/A,#N/A,#N/A,(blank),Spanish Red Cross,Balete,Gunako,,,,,,25
