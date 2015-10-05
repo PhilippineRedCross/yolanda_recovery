@@ -33,8 +33,8 @@ var svg = d3.select("#map").append("svg")
     .attr("height", height);
 
 var provinceGroup = svg.append('g').attr("id", "province-mapped");
-var municipGroup = svg.append('g').attr("id", "Municipality-mapped");
-var brgyGroup = svg.append('g').attr("id", "Barangay-mapped");
+var municipGroup = svg.append('g').attr("id", "municip-mapped");
+var brgyGroup = svg.append('g').attr("id", "brgy-mapped");
 
 svg
     // .call(zoom) // delete this line to disable free zooming
@@ -490,19 +490,19 @@ function colorMap(){
   for(entry in provinceList){
     provinceGroup.selectAll("path")
         .filter(function(d) {return d.properties.PCODE_PH1 == entry})
-        .attr('fill',"#C92E27");
+        .attr('fill',"#ed1b2e");
   }
   municipGroup.selectAll("path").attr("fill", null);
   for(entry in municipList){
     municipGroup.selectAll("path")
         .filter(function(d) {return d.properties.PCODE_PH2 == entry})
-        .attr('fill',"#9A7F6A");
+        .attr('fill',"#f03f4f");
   }  
   brgyGroup.selectAll("path").attr("fill", null);
   for(entry in brgyList){
     brgyGroup.selectAll("path")
         .filter(function(d) {return d.properties.PCODE_PH3 == entry})
-        .attr('fill',"#ECE3B2");
+        .attr('fill',"#f36471");
   }  
 }
 
