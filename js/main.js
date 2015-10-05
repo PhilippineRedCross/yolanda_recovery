@@ -343,7 +343,7 @@ function drawMunicipalities(d){
          $('#tooltip').empty();        
       });
   municipDisplay.exit().remove();
-  $("#loading").fadeOut(600);
+  $("#loading").fadeOut(400);
   colorMap();
   createTable();
 }
@@ -371,7 +371,7 @@ function drawBarangays(d){
          $('#tooltip').empty();        
       });
   brgyDisplay.exit().remove();
-  $("#loading").fadeOut(600);
+  $("#loading").fadeOut(400);
   colorMap();
   createTable();
 }
