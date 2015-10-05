@@ -490,19 +490,19 @@ function colorMap(){
   for(entry in provinceList){
     provinceGroup.selectAll("path")
         .filter(function(d) {return d.properties.PCODE_PH1 == entry})
-        .attr('fill',"#ed1b2e");
+        .attr('fill',"#C92E27");
   }
   municipGroup.selectAll("path").attr("fill", null);
   for(entry in municipList){
     municipGroup.selectAll("path")
         .filter(function(d) {return d.properties.PCODE_PH2 == entry})
-        .attr('fill',"#f03f4f");
+        .attr('fill',"#9A7F6A");
   }  
   brgyGroup.selectAll("path").attr("fill", null);
   for(entry in brgyList){
     brgyGroup.selectAll("path")
         .filter(function(d) {return d.properties.PCODE_PH3 == entry})
-        .attr('fill',"#f36471");
+        .attr('fill',"#ECE3B2");
   }  
 }
 
