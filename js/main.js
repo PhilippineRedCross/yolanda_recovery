@@ -118,8 +118,8 @@ function loadSector(sector, target){
       "Relocation Beneficiaries Selected",
       "Construction Started (Core + Relocation)",
       "Wooden Shelter (Core Shelter)",
-      "Half Concrete (Core Shelter)",
-	  //"Relocation Completed",
+      "Half Concrete (Core Shelter)", 
+      "Relocation Completed",
       "Training- Skilled Labour"
     ]; 
     if(shelterData.length === 0){
