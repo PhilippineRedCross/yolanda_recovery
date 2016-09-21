@@ -94,7 +94,9 @@ function loadSector(sector, target){
     indicatorList = [
       "HH Support Beneficiaries Selected", 
       "First Installment", 
-      "Second Installment"
+      "Second Installment",
+	  "STED Training Completed",
+	  "CMLP Project Turnover "
     ]; 
     if(livelihoodData.length === 0){
       $("#loading").show();
@@ -187,7 +189,8 @@ function loadSector(sector, target){
       "Schools Identified",
       "Schools WatSan Facilities Construction Started",
       "Schools WatSan Facilities Completed",
-      "# of students reached on CHAST"
+      "# of students reached on CHAST",
+	  "Community - Based WatSan Facilities"
     ]; 
     if(watsanData.length === 0){
       $("#loading").show();
