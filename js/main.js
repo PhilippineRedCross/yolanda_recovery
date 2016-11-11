@@ -96,7 +96,7 @@ function loadSector(sector, target){
       "First Installment", 
       "Second Installment",
 	  "STED Training Completed",
-	  "CMLP Project Turnover "
+	  "CMLP Project Turnover"
     ]; 
     if(livelihoodData.length === 0){
       $("#loading").show();
